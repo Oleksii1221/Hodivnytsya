@@ -1,0 +1,44 @@
+    //   SSS  EEEEE  TTTTT  TTTTT  III  N   N  GGGG  SSS       //
+   //   S     E        T      T     I   NN  N G     S         //
+  //     SSS  EEE      T      T     I   N N N G  GG  SSS     //
+ //         S E        T      T     I   N  NN G   G     S   //
+//      SSSS  EEEEE    T      T    III  N   N  GGGG  SSS   //
+
+int Dystantsiya = 20; //Дистанція від датчика до обєкту для спрацьовування в см
+int pos0 = 0;        //Точка закритого сервопривода
+int pos1 = 255;     //Точка відкритого сервопривода
+int doza = 500;    // Час відкритого сервопривода
+int kd = 10;      // Перерва між порціями в чекундах
+
+/////////////////////////////////////////////////////////////////////////////////
+#include <Servo.h>
+Servo myservo;
+const int trigPin = 10;
+const int echoPin = 9;
+long duration;
+int distance;
+
+void setup() {
+  myservo.attach(11);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  Serial.begin(9600);
+  kd = kd * 1000;
+}
+
+void loop() {
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  distance = duration * 0.034 / 2;
+  Serial.print(distance);
+  if (distance < Dystantsiya) {
+    myservo.write(pos1);
+    delay(doza);
+    myservo.write(pos0);
+    delay(kd);
+  }
+}
