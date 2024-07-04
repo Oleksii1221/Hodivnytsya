@@ -1,6 +1,6 @@
-**Годівниця для домашніх улюбленців з використанням Arduino
+Годівниця для домашніх улюбленців з використанням Arduino
 Цей проект створений для автоматизації процесу годування тварин. Коли тваринка підходить до годівниці, датчик виявляє її присутність і відкриває заслонку, щоб корм висипався в миску на певний час.
-**
+
 Підключення та налаштування
 
 З'єднання компонентів
@@ -66,10 +66,10 @@ Hodivnytsya.txt це ткстовий файл який містить в соб
 https://www.tinkercad.com/things/3QaXRRv9XuL-swanky-lahdi/editel?sharecode=ecfY98B4SHbGsR7fAVU1DnZwitdccpik92JTuMZohis
 
 
-**English version
-**
-**
-Feeder for Pets Using Arduino This project is designed to automate the feeding process for pets. When the pet approaches the feeder, a sensor detects its presence and opens the flap to dispense food into the bowl for a certain amount of time.**
+English version
+
+
+Feeder for Pets Using Arduino This project is designed to automate the feeding process for pets. When the pet approaches the feeder, a sensor detects its presence and opens the flap to dispense food into the bowl for a certain amount of time.
 
 Connections and Setup
 
